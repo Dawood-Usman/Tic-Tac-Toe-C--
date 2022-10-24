@@ -1,9 +1,8 @@
-#include<iostream>
-#include<string>
-#include<stdlib.h>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
-int player1_turn, player2_turn;
 void display_board(char* board[]);
 void player_1(char* board[]);
 void player_2(char* board[]);
@@ -11,8 +10,6 @@ int game_over(char* board);
 
 void display_board(char* board[])
 {
-	system("color 0a");
-	system("cls");
 	cout << "\t\t   +===========================+" << endl;
 	cout << "\t\t   | T I C    T A C    T O E   |" << endl;
 	cout << "\t\t   |         G A M E           |" << endl;
@@ -39,37 +36,37 @@ void player_1(char* board[])
 	while (1)
 	{
 		cout << "\n\t\t PLAYER 1 TURN : ";          //1st turn
+		char player1_turn;
 		cin >> player1_turn;
-		if (player1_turn >= 1 && player1_turn <= 9)
+		if (player1_turn >= '1' && player1_turn <= '9')
 		{
 			switch (player1_turn)
 			{
-			case 1:
+			case '1':
 				x = 0, y = 0;
 				break;
-
-			case 2:
+			case '2':
 				x = 0, y = 1;
 				break;
-			case 3:
+			case '3':
 				x = 0, y = 2;
 				break;
-			case 4:
+			case '4':
 				x = 1, y = 0;
 				break;
-			case 5:
+			case '5':
 				x = 1, y = 1;
 				break;
-			case 6:
+			case '6':
 				x = 1, y = 2;
 				break;
-			case 7:
+			case '7':
 				x = 2, y = 0;
 				break;
-			case 8:
+			case '8':
 				x = 2, y = 1;
 				break;
-			case 9:
+			case '9':
 				x = 2, y = 2;
 				break;
 			default:
@@ -97,37 +94,38 @@ void player_2(char* board[])
 	while (1)
 	{
 		cout << "\n\t\t PLAYER 2 TURN : ";          //1st turn
+		char player2_turn;
 		cin >> player2_turn;
-		if (player2_turn >= 1 && player2_turn <= 9)
+		if (player2_turn >= '1' && player2_turn <= '9')
 		{
 			switch (player2_turn)
 			{
-			case 1:
+			case '1':
 				x = 0, y = 0;
 				break;
 
-			case 2:
+			case '2':
 				x = 0, y = 1;
 				break;
-			case 3:
+			case '3':
 				x = 0, y = 2;
 				break;
-			case 4:
+			case '4':
 				x = 1, y = 0;
 				break;
-			case 5:
+			case '5':
 				x = 1, y = 1;
 				break;
-			case 6:
+			case '6':
 				x = 1, y = 2;
 				break;
-			case 7:
+			case '7':
 				x = 2, y = 0;
 				break;
-			case 8:
+			case '8':
 				x = 2, y = 1;
 				break;
-			case 9:
+			case '9':
 				x = 2, y = 2;
 				break;
 			default:
@@ -215,7 +213,6 @@ int main()
 			{
 				cout << "\n\t\t          |CONGARTULATIONS|       " << endl;
 				cout << "\t\t *****|PLAYER 1 WINS THE GAME|***** " << endl;
-				system("pause");
 				return 0;
 			}
 			else
@@ -223,13 +220,11 @@ int main()
 				{
 					cout << "\n\t\t          |CONGARTULATIONS|       " << endl;
 					cout << "\t\t *****|PLAYER 2 WINS THE GAME|***** " << endl;
-					system("pause");
 					return 0;
 				}
 				else if (count == 10)
 				{
 					cout << "\n\t\t  Game Draw ! " << endl;
-					system("pause");
 					return 0;
 				}
 		}
@@ -239,3 +234,4 @@ int main()
 			player_2(board);
 	}
 }
+
